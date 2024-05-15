@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .calculator {
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .calculator h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .calculator form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calculator input[type="text"],
+  .calculator select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .calculator button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .calculator button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+  <h2>Innocent Calculator</h2>
+
+  <form action="/calculate" method="post">
+    <input type="text" name="num1" placeholder="Enter first number" required>
+    <select name="operation">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="text" name="num2" placeholder="Enter second number" required>
+    <button type="submit">Calculate</button>
+  </form>
+</div>
+
+</body>
+</html>
