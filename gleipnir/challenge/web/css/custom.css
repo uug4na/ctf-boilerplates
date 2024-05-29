@@ -1,0 +1,24 @@
+@font-face {
+	font-family: Minecraft;
+	src: url('./Minecraft.ttf');
+  }
+  
+  input {
+	text-align: center;
+  }
+  
+  h2 {
+	color: white;
+  }
+  
+  body {
+	text-align: center;
+	background-image: url("https://cdnb.artstation.com/p/assets/images/images/053/655/041/original/huang-minfei-0907-wallpaper.gif");
+  background-size: cover;
+	font-family: Minecraft, Arial, Helvetica, sans-serif
+  }
+  
+  button {
+	color: white;
+  }
+  

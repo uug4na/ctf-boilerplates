@@ -1,0 +1,17 @@
+name: "gleipnir"
+author: "uug4na"
+category: Web
+description: |-
+  hoodwink was going to buy gleipnir, but his money wasn't enough to buy
+  **Author**: uug4na
+tags:
+  - medium
+connection_info: https://gleipnir.challenge.haruulzangi.mn/
+value: 1000
+type: dynamic
+extra:
+  initial: 1000
+  decay: 40
+  minimum: 100
+flags:
+  - HZU18{DAMN_U_B0UGHT_GL31PN1R}

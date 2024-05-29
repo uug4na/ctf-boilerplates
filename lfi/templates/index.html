@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LFI Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap; /* Ensure the content wraps properly */
+            overflow: auto; /* Add scrollbars if the content overflows */
+            max-height: 400px; /* Optional: set a maximum height */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Library</h1>
+        <p>Books: </p>
+        <select id="filename">
+            <option value="A House to Let by Charles Dickens and Others">A House to Let by Charles Dickens and Others</option>
+            <option value="A Strange Disappearance by Anna Katharine Green">A Strange Disappearance by Anna Katharine Green</option>
+            <option value="The Moonstone by Wilkie Collins">The Moonstone by Wilkie Collins</option>
+            <option value="The-Secret-Adversary">The Secret Adversary</option>
+        </select>        
+        <button onclick="readFile()">Read Book</button>
+        <pre id="fileContent"></pre>
+    </div>
+
+    <script>
+        function readFile() {
+            const filename = document.getElementById('filename').value;
+            fetch(`/read?file=./books/${filename}.txt`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('fileContent').textContent = data;
+                })
+                .catch(error => {
+                    document.getElementById('fileContent').textContent = `Error: ${error}`;
+                });
+        }
+    </script>
+</body>
+</html>
